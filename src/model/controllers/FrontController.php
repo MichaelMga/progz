@@ -12,8 +12,10 @@
     }
 
     public function displayPage($templateFolder, $template){
+       
+        echo "displaying a page...";
 
-        include "src/views/templates/$templateFolder/{$template}";
+        include "src/views/templates/$templateFolder/{$template}.php";
 
     }
 
