@@ -6,7 +6,7 @@
 
  class Router
  {
-       private $routeCollection;
+       public $routeCollection = [];
 
 
 
@@ -20,15 +20,13 @@
 
 
 
-       public function addRoute(){
+       public function addRoute(string $path, $callable){
 
 
-
-
-
+          $this->routeCollection[] = [$path => $callable];
         
-       }
 
+       }
 
 
 
