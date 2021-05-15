@@ -8,7 +8,7 @@ class TableBuilder
 {
    private $db;
  
-   public function __construct(PDO $db){
+   public function __construct(\PDO $db){
 
        $this->db = $db;
    
@@ -16,15 +16,24 @@ class TableBuilder
 
    public function createTable($tableName){
 
-      $sql = "CREATE TABLE $tableName(ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT)";
+      try{    
+                  
+         $sql = "CREATE TABLE $tableName (ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT)";
 
-      $stmt = $this->db->prepare($sql);
+         $stmt = $this->db->prepare($sql);
+   
+         $stmt->execute();
 
-      $stmt->execute();
+         echo "</br> Table built !!!";
 
+      } catch(PDOException $e){
 
+         echo $e->getMessage();
+
+      }
+
+  
    }
-
  
 
 }
