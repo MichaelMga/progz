@@ -1,17 +1,17 @@
 <?php
 
  use controllers\SecurityController;
+ use routes\Router;
+
  
  include 'src/autoload.php';
- include 'src/routes/routes.php';
+
 
 
  //rooter
 
 
-
-
-
+ $router = new Router();
  $securityController = new SecurityController;
 
- echo "welcome on progz";
+ 

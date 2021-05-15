@@ -7,4 +7,11 @@
   {
 
 
+    public function construct(){
+
+        return "security";
+
+    }
+
+
   }
