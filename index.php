@@ -18,12 +18,14 @@
  
  $db = $db->connect("progzdb");
 
+ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
  $router = new Router($db);
  $securityController = new SecurityController($db);
  $FrontController = new FrontController($router);
 
 
- $securityController->tryToRegister("mike", "pass");
+ $securityController->tryToRegister("micka", "pass");
 
 
  //$router->addRoute(rootUrl . "login" , function(){ global $FrontController; $FrontController->dislpayPage("admin", "login"); } );
@@ -31,3 +33,6 @@
   
  //$router->displayPage($_SERVER["REQUEST_URI"]);
  
+
+
+ //$securityController->tryToLogin("mike", "password");

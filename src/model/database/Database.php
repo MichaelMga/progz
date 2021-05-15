@@ -5,14 +5,14 @@ namespace database;
 class Database
  {
 
-    private $dsn;
+    private $host;
     private $username;
     private $password;
 
    
    public function __construct(string $host, string $username , string $password){
 
-       $this->dsn = "mysql:host=$host";
+       $this->host = $host;
        $this->username = $username;
        $this->password = $password;
      
@@ -24,9 +24,9 @@ class Database
         
       try{
           
-        echo "connection ok!";
+        echo "connexion ok!";
 
-        return new \PDO($this->dsn, $this->username, $this->password);
+        return new \PDO("mysql:host=$this->host;dbname=$dbName", $this->username, $this->password);
 
       } catch (PDOException $e){
 
@@ -34,8 +34,6 @@ class Database
 
       }
       
-
-
 
    }
 
