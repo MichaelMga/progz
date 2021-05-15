@@ -6,15 +6,14 @@
 
  class Router
  {
-       public $routeCollection = [];
+       private $routeCollection = [];
+       private $routeFoldersList = [];
+       private $db;
 
 
+       public function __construct(PDO $db){
 
-
-       public function __construct(){
-
-
-
+            $this->db = $db;
 
        }
 
@@ -24,8 +23,25 @@
 
 
           $this->routeCollection[] = [$path => $callable];
+
+          //insert into the db;
         
 
+       }
+
+
+       public function getTemplateFolderFromUrl($url){
+
+      
+            //$sql = "SELECT folder FROM routeUrls WHERE path = $url ";
+
+
+       }
+
+
+       public function getRouteCollection(){
+
+            return $this->routeCollection;
        }
 
 

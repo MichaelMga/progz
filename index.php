@@ -1,5 +1,5 @@
 <?php
-
+ use database\DatabaseBuilder;
  use controllers\SecurityController;
  use controllers\FrontController;
  use routes\Router;
@@ -10,11 +10,17 @@
 
  //rooter
 
-
  $router = new Router();
  $securityController = new SecurityController();
- $FrontController = new FrontController();
+ $FrontController = new FrontController($router);
+ 
+
+
+ //$router->addRoute(rootUrl . "login" , function(){ global $FrontController; $FrontController->dislpayPage("admin", "login"); } );
+
+  
+ //$router->displayPage($_SERVER["REQUEST_URI"]);
 
 
 
- $router->addRoute(rootUrl . "login" , function(){ global $FrontController; $FrontController->dislpayPage("admin", "login"); } );
+ //add col

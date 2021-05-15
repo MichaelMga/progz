@@ -5,17 +5,27 @@
 
  class FrontController
  {
+     private $router;
 
-    public function __construct(){
+    public function __construct(Router $router){
 
+        $this->router = $router;
 
     }
 
-    public function displayPage($templateFolder, $template){
-       
-        echo "displaying a page...";
+    public function displayPage($url){
 
-        include "src/views/templates/$templateFolder/{$template}.php";
+        try{    
+
+           $folder = $this->router->getTemplateFolderFromUrl($url);
+           include "src/views/templates/$folder/{$url}.php";
+
+        } catch(Exception $e){
+
+             echo $e->getMessage();
+
+        }
+
 
     }
 
