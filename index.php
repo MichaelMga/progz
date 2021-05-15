@@ -1,13 +1,11 @@
 <?php
 
  use controllers\SecurityController;
- use controllers\MainController;
-
+ use controllers\FrontController;
  use routes\Router;
 
  include 'const.php';
  include 'src/autoload.php';
-
 
 
  //rooter
@@ -15,16 +13,8 @@
 
  $router = new Router();
  $securityController = new SecurityController();
- $mainController = new MainController();
-
- 
- function myFunction(){
-
-    echo "my function called";
- }
+ $FrontController = new FrontController();
 
 
- $router->addRoute(rootUrl . "fct" , function(){ global $mainController; $mainController->test(); } );
 
- print_r($router->routeCollection[0][rootUrl . "fct"]());
-
+ $router->addRoute(rootUrl . "login" , function(){ global $FrontController; $FrontController->dislpayPage("admin", "login"); } );
