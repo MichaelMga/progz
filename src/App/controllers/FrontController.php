@@ -9,7 +9,7 @@ class FrontController extends AbstractController
 {
 
 
-    public function display($templatea, $templateb)
+    public static function display($templatea, $templateb) : Response
     {
         
         //return new Response("ok, the response is : $templatea");
@@ -17,6 +17,18 @@ class FrontController extends AbstractController
         return parent::render("folder/file");
 
     }
+
+
+    public static function getOrm()
+    {
+        
+        return parent::getSuperOrm();
+
+    }
+
+
+    
+    
 
 
 }

@@ -4,6 +4,9 @@ require "src/autoload.php";
 
 use PHPUnit\Framework\TestCase;
 use App\controllers\FrontController;
+use App\model\orm\SuperOrm;
+
+
 
 
 
@@ -23,27 +26,27 @@ class ControllerTest extends TestCase
 
     }
 
-     /**
-     * @test
-     */
-
-    public function CanIUseTheRenderFunction()
-    {
-        $controller = new FrontController();
-        $controller->display("a", "b");
-    }
-
 
     
-     /**
-     * @test
-     */
 
-    public function CanIRenderAtemplate()
+
+
+    /**
+     * @test
+    */
+
+    public function canIreachTheOrm()
     {
+
         $controller = new FrontController();
-        echo $controller->display("a", "b");
+        $superOrm = $controller->getOrm();
+
+
+        $this->assertInstanceOf(SuperOrm::class, $superOrm);        
+
     }
+
+
 
 
 }

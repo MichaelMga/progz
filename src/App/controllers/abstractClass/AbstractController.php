@@ -2,8 +2,6 @@
 
 namespace App\controllers\abstractClass; 
 use App\Component\HttpComponent\Response;
-
-
 use App\model\orm\SuperOrm;
 
 
