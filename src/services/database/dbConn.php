@@ -11,5 +11,7 @@
 
 
     $hostConn = new DbConn(dbHost, dbUsername, dbPassword);
+
+    global $conn;
     $conn = $hostConn->connect(dbName);
 
