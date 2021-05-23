@@ -9,13 +9,13 @@
  {
     private $entities;
 
-    public function __construct(array $entities){
+    public function __construct($conn, $entity){
 
-        $this->entities = $entities;
-
-        print_r($entities);
+        //$this->entities = $entities;
 
     }
+
+    /*
 
 
     public function getElementFromId(string $id)
@@ -34,6 +34,8 @@
         return $entity;
         
     }
+
+    */
 
 
  }

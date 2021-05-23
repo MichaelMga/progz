@@ -19,27 +19,25 @@ class FrontController extends AbstractController
     }
 
 
-    public static function getOrm()
+    
+    public static function insertArticle(Object $playerObject)
     {
-        
-        return parent::getSuperOrm();
+        //global $manager;
+        //$manager->insert($playerObject);
+        //parent::getSuperOrm();
 
     }
 
 
-    
-    public static function insertEntity($val, $val2)
+    public static function getArticle(int $id)
     {
+       $article = parent::getSuperOrm()->getRepository("controllers");
 
-        Self::getOrm()->getRowHandler("controllers")->insertRow($val, $val2);     
-
-    
+       //$articleName = $articleObj->get("name");
 
     }
 
 
-    
-    
 
 
 }

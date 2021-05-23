@@ -8,6 +8,8 @@ use App\model\orm\SuperOrm;
 use App\model\database\TableHandler;
 use App\model\database\table\Table;
 use App\model\database\table\handlers\RowHandler;
+use App\model\entities\Repository;
+
 
 
 
@@ -24,9 +26,9 @@ class OrmTest extends TestCase
 
         $controller = new FrontController();
         $superOrm = $controller->getSuperOrm();
-        $tableHandler = $superOrm->getRowHandler("controllers");
+        $repository = $superOrm->getRepository("controllers");
     
-        $this->assertInstanceOf(RowHandler::class, $tableHandler);
+        $this->assertInstanceOf(Repository::class, $repository);
 
     }
 
