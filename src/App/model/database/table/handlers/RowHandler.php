@@ -17,9 +17,9 @@ class RowHandler
 
     }
 
-    public function insertRow() : void
+    public function insertRow($properties, $values) : void
     {
-
+        echo "inserting row";
 
     }
 

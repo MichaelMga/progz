@@ -24,7 +24,7 @@ class OrmTest extends TestCase
 
         $controller = new FrontController();
         $superOrm = $controller->getSuperOrm();
-        $tableHandler = $superOrm->getRepository("controllers");
+        $tableHandler = $superOrm->getRowHandler("controllers");
     
         $this->assertInstanceOf(RowHandler::class, $tableHandler);
 

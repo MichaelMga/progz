@@ -8,8 +8,6 @@ use App\model\orm\SuperOrm;
 
 
 
-
-
 class ControllerTest extends TestCase
 {
     /**
@@ -27,9 +25,6 @@ class ControllerTest extends TestCase
     }
 
 
-    
-
-
 
     /**
      * @test
@@ -45,6 +40,42 @@ class ControllerTest extends TestCase
         $this->assertInstanceOf(SuperOrm::class, $superOrm);        
 
     }
+
+
+        /**
+     * @test
+    */
+
+    public function canIreachTheRowHandler()
+    {
+
+        $controller = new FrontController();
+        $superOrm = $controller->getOrm();
+        $repository = $superOrm->getRowHandler("controllers");
+        
+        $this->assertInstanceOf(SuperOrm::class, $superOrm);        
+    }
+
+
+    /**
+     * @test
+    */
+
+
+    
+    public function canIinsertEntity()
+    {
+        $controller = new FrontController();
+
+        $insert = $controller->insertEntity("val","val2");
+
+        
+    }
+
+
+
+
+
 
 
 

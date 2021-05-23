@@ -28,6 +28,17 @@ class FrontController extends AbstractController
 
 
     
+    public static function insertEntity($val, $val2)
+    {
+
+        Self::getOrm()->getRowHandler("controllers")->insertRow($val, $val2);     
+
+    
+
+    }
+
+
+    
     
 
 
