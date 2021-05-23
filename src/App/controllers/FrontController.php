@@ -1,20 +1,22 @@
 <?php
 
- namespace App\Controllers;
+ namespace App\controllers;
  
- use App\Component\HttpComponent\Response;
+ use App\controllers\abstractClass\AbstractController;
 
-class FrontController 
+
+class FrontController extends AbstractController
 {
 
 
-    public static function display($templatea, $templateb) : Response
+    public function display($templatea, $templateb)
     {
         
-        return new Response("ok, the response is : $templatea");
-        
-    }
+        //return new Response("ok, the response is : $templatea");
 
+        return parent::render("folder/file");
+
+    }
 
 
 }

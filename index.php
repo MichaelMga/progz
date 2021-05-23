@@ -28,7 +28,7 @@
         $method = $routes[$url]["method"];
         $parameters = $routes[$url]["parameters"];
 
-        $response = call_user_func_array($controller .'::' . $method , $parameters );
+        $response = call_user_func_array([$controller,$method] , $parameters );
         
     } else {
 
