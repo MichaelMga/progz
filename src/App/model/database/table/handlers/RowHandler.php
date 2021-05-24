@@ -69,8 +69,12 @@ class RowHandler
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
+
+        echo $stmt->rowCount();
+
+        print_r($result);
         
-        return $result;
+        return $result[0];
     }
 
 

@@ -25,7 +25,7 @@
        $rowArray = $this->tableConn->getRowHandler()->getTable($this->table);
        
        //convert it into an object
-
+       
        $entity = new RowToObjectConverter($rowArray);
 
     }
