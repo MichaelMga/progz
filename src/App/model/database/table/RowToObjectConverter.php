@@ -23,6 +23,8 @@ class RowToObjectConverter
     public function getObject()
     {
 
+        return $this->object;
+
 
     }
 

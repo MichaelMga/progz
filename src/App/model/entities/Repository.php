@@ -26,7 +26,11 @@
        
        //convert it into an object
        
-       $entity = new RowToObjectConverter($rowArray);
+       $rowConverter = new RowToObjectConverter($rowArray);
+
+       $entity = $rowConverter->getObject();
+
+       return $entity;
 
     }
 

@@ -44,9 +44,7 @@ class ControllerTest extends TestCase
 
     public function getEntity()
     {
-        $controller = new FrontController();
-        $controller->getArticle(20);  
-         
+
     }
 
 

@@ -8,11 +8,8 @@
     private $properties = [];
 
     public function __construct(array $properties){
-
         //$this->properties = $properties;
-
         //echo "new entity collected!";
-
     }
 
 
@@ -24,7 +21,8 @@
     
     public function setProperty($property, $value)
     {
-        $this->properties[$property] = $value;   
+        $this->properties[$property] = $value;  
+         
         echo $this->properties[$property];
     }
 

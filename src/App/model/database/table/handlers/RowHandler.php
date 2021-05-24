@@ -70,9 +70,6 @@ class RowHandler
         $stmt->execute();
         $result = $stmt->fetchAll();
 
-        echo $stmt->rowCount();
-
-        print_r($result);
         
         return $result[0];
     }
