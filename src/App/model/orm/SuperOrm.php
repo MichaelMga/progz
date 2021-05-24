@@ -24,9 +24,6 @@ class SuperOrm
 
    public function getRepository(string $entityName)
    { 
-      //get a table , and get a row, or all the rows
-
-      //return $this->tableHandler->getTable($entityName)->getRowHandler();
 
       return new Repository($this->conn, $entityName);
 

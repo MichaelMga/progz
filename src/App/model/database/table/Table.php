@@ -25,15 +25,12 @@
     public function getColumnHandler(): ColumnHandler
     {
         return new ColumnHandler($this->conn, $this->name);
-
     }
 
 
     public function getRowHandler(): RowHandler 
     {
-
         return new RowHandler($this->conn, $this->name);
-
     }
 
 
@@ -42,7 +39,6 @@
         try{
          
           $tableHandler = new TableHandler($this->conn, $this->name);
-
           $tableHandler->findTable($this->name);
 
         } catch (PDOException $e){

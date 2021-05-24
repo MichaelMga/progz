@@ -63,10 +63,14 @@ class RowHandler
     }
 
 
-    private function getTable()
+    public function getTable($table)
     {
-
-
+        $sql="SELECT * FROM $table";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        
+        return $result;
     }
 
 

@@ -31,7 +31,7 @@ class FrontController extends AbstractController
 
     public static function getArticle(int $id)
     {
-       $article = parent::getSuperOrm()->getRepository("controllers");
+       $article = parent::getSuperOrm()->getRepository("controllers")->getElementFromId($id);
 
        //$articleName = $articleObj->get("name");
 
