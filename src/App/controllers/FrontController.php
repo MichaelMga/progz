@@ -1,8 +1,14 @@
 <?php
 
  namespace App\controllers;
- 
+
+ require_once 'src/autoload.php';
+
  use App\controllers\abstractClass\AbstractController;
+
+ require_once "src/services/database/entityManager.php";
+
+
 
 
 class FrontController extends AbstractController
@@ -11,7 +17,6 @@ class FrontController extends AbstractController
 
     public static function display($templatea, $templateb) : Response
     {
-        
         //return new Response("ok, the response is : $templatea");
 
         return parent::render("folder/file");
@@ -20,12 +25,11 @@ class FrontController extends AbstractController
 
 
     
-    public static function insertArticle(Object $playerObject)
+    public static function insertArticle()
     {
-        //global $manager;
-        //$manager->insert($playerObject);
-        //parent::getSuperOrm();
-
+        $article = Self::getArticle(1);
+        global $entityManager;
+        $entityManager->insert();
     }
 
 
@@ -33,9 +37,10 @@ class FrontController extends AbstractController
     {
        $article = parent::getSuperOrm()->getRepository("controllers")->getElementFromId($id)->getPropertyValue("name");
 
-       //$articleName = $articleObj->get("name");
 
     }
+
+
 
 
 

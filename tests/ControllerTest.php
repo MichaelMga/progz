@@ -5,6 +5,8 @@ require "src/autoload.php";
 use PHPUnit\Framework\TestCase;
 use App\controllers\FrontController;
 use App\model\orm\SuperOrm;
+use App\Model\entities\EntityManager;
+
 
 
 
@@ -24,28 +26,21 @@ class ControllerTest extends TestCase
 
 
 
-
-    /* 
-
-    
-    public function canIinsertEntity()
-    {
-        $controller = new FrontController();
-        $insert = $controller->insertEntity("val","val2");
-        
-    }
-
-    */
-
     
     /**
      * @test
     */
 
-    public function getEntity()
-    {
 
+
+    
+    public function canIinsertEntity()
+    {
+        $controller = new FrontController();
+        $controller->insertArticle();
+        
     }
+
 
 
 
