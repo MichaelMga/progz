@@ -5,25 +5,30 @@
  class Entity
  {
     private $name;
-    private $properties = [];
+    private $propertiesAndValues = [];
 
-    public function __construct(array $properties){
-        //$this->properties = $properties;
-        //echo "new entity collected!";
+
+    public function __construct(){
+
+
     }
 
 
     public function getPropertyValue($property)
     {
-        return $this->properties[$property];   
+        return $this->propertiesAndValues[$property];   
     }
 
     
     public function setProperty($property, $value)
     {
-        $this->properties[$property] = $value;  
-         
-        echo $this->properties[$property];
+        $this->propertiesAndValues[$property] = $value;
+    }
+
+
+    public function getPropertiesAndValues()
+    {
+        return $this->propertiesAndValues;      
     }
 
 

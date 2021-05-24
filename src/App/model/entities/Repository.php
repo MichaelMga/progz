@@ -18,22 +18,24 @@
         $this->tableConn = new Table($conn, $table);
     }
 
-    
-
     public function getElementFromId(int $id)
     {
-       $rowArray = $this->tableConn->getRowHandler()->getTable($this->table);
-       
+       if($this->tableConn->getRowHandler()->findRowFromId($id) == true )
+       {
+           $rowArray = $this->tableConn->getRowHandler()->getRowFromId($id);
+           $rowConverter = new RowToObjectConverter($rowArray, $this->table);
+           $entity = $rowConverter->getObject();
+
+           return $entity;
+
+       } else {
+           echo "this entity was not found";
+           return false;
+       }
+
        //convert it into an object
-       
-       $rowConverter = new RowToObjectConverter($rowArray);
-
-       $entity = $rowConverter->getObject();
-
-       return $entity;
-
+   
     }
-
 
 
  }

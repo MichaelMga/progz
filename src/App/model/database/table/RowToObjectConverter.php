@@ -8,13 +8,19 @@ use App\model\entities\Entity;
 class RowToObjectConverter
 {
 
-    public function __construct($row)
+    public function __construct($row, $table)
     {
-        $this->object = new Entity($row);
+        $this->object = new Entity();
+
+        $this->object->setProperty("table", $table);
+
+   
 
         foreach($row as $key => $value)
         {
-            $this->object->setProperty($key,$value);
+            if(gettype($key) !== "integer"){
+                $this->object->setProperty($key,$value);
+            }
         }
 
     }
