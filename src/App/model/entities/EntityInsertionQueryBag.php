@@ -38,6 +38,8 @@ class EntityInsertionQueryBag
    
        }
 
+       //removing the last ","
+
        $this->columnsString = substr($columns,0,-1); 
        $this->valuesString = substr($values,0,-1);
     }

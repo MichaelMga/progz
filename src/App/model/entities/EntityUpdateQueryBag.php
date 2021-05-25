@@ -2,12 +2,13 @@
 
 namespace App\model\entities;
 
-class EntityInsertionQueryBag
+class EntityUpdateQueryBag
 {  
-    public function __construct()
+    public function __construct(Object $entity)
     {
-
+        
 
     }
+
 
 }
