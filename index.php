@@ -24,7 +24,7 @@
 
     if($matcher->routeFound($url)){
 
-        $controller = $routes[$url]["controller"];
+        $controller = new $routes[$url]["controller"];
         $method = $routes[$url]["method"];
         $parameters = $routes[$url]["parameters"];
 

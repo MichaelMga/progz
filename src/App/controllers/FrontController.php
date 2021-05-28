@@ -5,6 +5,7 @@
  require_once 'src/autoload.php';
 
  use App\controllers\abstractClass\AbstractController;
+ use App\component\httpComponent\Response;
  use App\model\entities\Entity;
 
 
@@ -17,17 +18,17 @@ class FrontController extends AbstractController
 {
 
 
-    public static function display($templatea, $templateb) : Response
+    public function displayHome($templatea, $templateb) : Response
     {
         //return new Response("ok, the response is : $templatea");
 
-        return parent::render("folder/file");
+        return $this->render("folder/file");
 
     }
 
 
     
-    public static function insertArticle()
+    public function insertArticle()
     {
         $article = parent::getSuperOrm()->getRepository("controllers")->getElementFromId(1);
 
@@ -49,17 +50,13 @@ class FrontController extends AbstractController
     }
 
 
-    public static function getArticle(int $id)
+    public function getArticle(int $id)
     {
        $article = parent::getSuperOrm()->getRepository("controllers")->getElementFromId($id);
         
        return $article;
 
     }
-
-
-
-
 
 
 }
