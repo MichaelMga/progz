@@ -18,8 +18,11 @@ abstract class AbstractController
       ob_start();
       echo $pathFromTemplateFolder;
       $path = ob_get_clean();
-     
+
+      include "templates/base.php";
+
       return new Response(file_get_contents("templates/$path.php"));
-   }
+
+   }   
 
 }

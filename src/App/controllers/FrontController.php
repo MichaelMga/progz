@@ -22,7 +22,7 @@ class FrontController extends AbstractController
     {
         //return new Response("ok, the response is : $templatea");
 
-        return $this->render("folder/file");
+        return $this->render("home");
 
     }
 
@@ -30,7 +30,7 @@ class FrontController extends AbstractController
     
     public function insertArticle()
     {
-        $article = parent::getSuperOrm()->getRepository("controllers")->getElementFromId(1);
+        $article = $this->getSuperOrm()->getRepository("controllers")->getElementFromId(1);
 
         $entity = new Entity();
 
@@ -52,7 +52,7 @@ class FrontController extends AbstractController
 
     public function getArticle(int $id)
     {
-       $article = parent::getSuperOrm()->getRepository("controllers")->getElementFromId($id);
+       $article = $this->getSuperOrm()->getRepository("controllers")->getElementFromId($id);
         
        return $article;
 
